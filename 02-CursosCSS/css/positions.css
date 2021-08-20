@@ -1,0 +1,167 @@
+/*
+Posicionamiento CSS
+
+  La propiedades FLOAT y POSITION nos permiten modificar la posición natural de cualquier elemento del documento HTML.
+
+  El navegador coloca cada elemento teniendo en cuenta el orden en el que aparece en el documento y su tipo de visualización dependiendo si es un elemento de línea o de bloque.
+
+  Con FLOAT y POSITION podemos modificar este comportamiento.
+
+  Elementos Flotantes
+    - float: Convierte un elemento en flotante desplazándolo hasta la zona más a la izquierda o más a la derecha de la posición en la que originalmente se encontraba.
+    - clear: Limpia la flotación (left, right, both)
+
+  Tipos de Posicionamiento:
+    - static (default)
+    - relative
+    - absolute
+    - fixed
+    - sticky
+
+  Para mover los elementos posicionados se activan las propiedades:
+    - top (vertical - eje Y)
+    - bottom (vertical - eje Y)
+    - left (horizontal - eje X)
+    - right (horizontal - eje X)
+    - z-index (profundidad - eje Z)
+
+  Las propiedades top y left van a tener preferencia por sobre bottom y right respectivamente.
+
+  Estás 5 propiedades no funcionan con el valor de static.
+*/
+
+/* static: Es el valor por defecto, significa que el elemento respeta el flujo del documento HTML, por lo que no se puede mover ni posicionar */
+.static {
+  background-color: yellow;
+  position: static;
+  top: 10px;
+  left: 10px;
+}
+
+/* relative: El elemento conserva sus dimensiones y posición original en el flujo del documento. Si se mueve toma como referencia su posición original */
+.relative {
+  background-color: turquoise;
+  position: relative;
+  width: 300px;
+  height: 50px;
+  /*  top: 50px;
+  left: 50px; */
+  bottom: 50px;
+  right: 50px;
+  top: -30px;
+  left: -10px;
+  top: 300px;
+  left: 50px;
+}
+
+/* absolute: El elemento pierde sus dimensiones y posición original en el flujo del documento. Si se mueve puede tomar como referencia 2 elementos:
+  1) El primer ancestro con posicionamiento relativo
+  2) Si no encuentra un ancestro relativo, se mueve respecto del documento HTML */
+.absolute {
+  background-color: tomato;
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  /* top: 0;
+  left: 0; */
+  /* top: 100px;
+  left: 100px; */
+  right: 0;
+  bottom: 0;
+}
+
+.relative-parent {
+  background-color: khaki;
+  position: relative;
+  width: 600px;
+  height: 50px;
+  top: 50px;
+  left: 50px;
+}
+
+.absolute-child {
+  background-color: lightcoral;
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  /* bottom: 0;
+  right: 0; */
+  top: -50px;
+  left: -30px;
+}
+
+/* fixed: El elemento pierde sus dimensiones y posición original en el flujo del documento. Si se mueve toma como referencia el documento HTML y queda fijo en la posición, cuando el scroll se mueva, el elemento no lo hará, queda FIJO */
+.fixed {
+  background-color: lightgreen;
+  position: fixed;
+  width: 300px;
+  height: 100px;
+  /* right: 20px;
+  bottom: 10px; */
+  top: 30px;
+  left: 400px;
+}
+
+/* sticky: es un combinación de posicionamiento relative y fixed, para este posicionamiento las propiedades de top, left, bottom y right no mueven el elemento, sirven como un punto de referencia, mientras no lleguen a ese valor el elemento se comporta como relative, cuando llega se convierte en fixed
+
+Para que este comportamiento funcione el elemento sticky debe ser hijo directo del body o su elemento contenedor debe tener dimensiones definidas y sólo será sticky dentro de las dimensiones de su contenedor padre. */
+.sticky {
+  background-color: lightskyblue;
+  position: sticky;
+  top: 50px;
+}
+
+.sticky-parent {
+  border: thin dashed black;
+  height: 600px;
+}
+
+.sticky-child {
+  background-color: lightslategray;
+  position: sticky;
+  top: 75px;
+}
+
+/* z-index: propiedad que permite controlar la profundidad de los elementos posicionados, su valor por defecto es auto, acepta número positivos, negativos y cero.
+
+A mayor valor el elemento esta más al frente, a menor valor más al fondo.
+
+Un elemento padre nunca podrá estar sobre sus elementos hijos, sin embargo los elementos hijos si pueden dándoles un valor negativo y que el elemento padre no tenga definido valor de z-index */
+.z-index-1,
+.z-index-2 {
+  background-color: mediumaquamarine;
+  border: thin solid black;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.z-index-1 {
+  z-index: 1;
+  z-index: 0;
+}
+
+.z-index-2 {
+  top: -200px;
+  left: 100px;
+  z-index: 2;
+  z-index: -1;
+}
+
+.z-index-parent {
+  background-color: mediumorchid;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  /* z-index: 2; */
+}
+
+.z-index-child {
+  background-color: mediumvioletred;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: -75px;
+  left: 75px;
+  z-index: -1;
+}
