@@ -1,0 +1,56 @@
+.list {
+  list-style-type: disc; /* default */
+  list-style-type: square;
+  list-style-type: circle;
+  list-style-type: lower-roman;
+  list-style-type: upper-roman;
+  list-style-type: decimal;
+  list-style-type: decimal-leading-zero;
+  list-style-type: none;
+  list-style-type: lower-greek;
+  list-style-image: url("../assets/favicon.png");
+  list-style-image: url("../assets/cielo.png");
+  list-style-image: none; /* default */
+}
+
+.list li {
+  list-style-type: none;
+}
+
+.list li::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../assets/favicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list-2 li {
+  background-color: coral;
+  list-style-position: inside;
+  list-style-position: outside;
+}
+
+.list-3 li {
+  background-color: cornsilk;
+  list-style: lower-latin url("../assets/cielo.png") outside;
+  list-style: lower-latin inside;
+}
+
+.text-column-4 {
+  list-style-position: inside;
+  column-count: 4;
+  column-gap: 1rem;
+  column-rule: thin dotted red;
+  column-width: 100px; /* tamaño mínimo de anchura de las columas */
+}
+
+.text-column-3 {
+  column-count: 3;
+  column-gap: 1rem;
+  column-rule: thin solid gray;
+  column-width: 100px; /* tamaño mínimo de anchura de las columas */
+}

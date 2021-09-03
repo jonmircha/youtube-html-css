@@ -1,0 +1,58 @@
+:root {
+  color: darkgreen;
+  --default-bg-color: skyblue;
+}
+
+html {
+  color: red;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.custom-props-1 {
+  --primary-color: gray;
+  --font-size: 32px;
+  background-color: var(--primary-color);
+}
+
+.custom-props-2 {
+  background-color: var(--default-bg-color);
+  border: thin solid var(--border-color);
+  padding: 1rem;
+}
+
+.custom-props-3 {
+  font-size: var(--font-size);
+  border: thin solid var(--border-color);
+}
+
+.title-props {
+  --primary-color: navy;
+  color: var(--primary-color, orange);
+  background-color: var(--default-bg-color);
+}
+
+.ch-10 {
+  --padding-size: 3ch;
+  --num-ch: 10ch;
+  background-color: var(--default-bg-color);
+  font-size: 2rem;
+  padding: var(--padding-size);
+  width: calc(var(--num-ch) + var(--padding-size) * 2);
+}
+
+.min-max {
+  background-color: var(--default-bg-color);
+  margin-top: 1rem;
+  width: min(300px, 20vw, 20rem);
+  height: max(200px, 25vh);
+}
+
+h1 {
+  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}
