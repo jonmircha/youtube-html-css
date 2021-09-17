@@ -1,0 +1,817 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.box {
+  border: thick solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 200px;
+  height: 200px;
+}
+
+.card {
+  border: thick solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 600px;
+  height: 400px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+/* 
+Transiciones
+  transition-property
+  transition-duration
+  transition-timing-function: none linear ease ease-in ease-out ease-in-out steps
+  transition-delay
+  transition: property duration timing-funciton delay
+
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+*/
+.transitions .box {
+  background-color: magenta;
+  border-color: green;
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  transition-delay: 0.5s;
+  transition: border-color 2s linear 1s;
+  transition: all 2s ease-in-out 250ms;
+  transition: background-color 2s ease-in-out 250ms,
+    border-color 2s ease-in-out 250ms, border-radius 2s ease-in-out 250ms;
+}
+
+.transitions .box:hover {
+  background-color: cyan;
+  border-color: red;
+  border-radius: 2rem;
+  /* border-style: dashed; */
+}
+
+.transitions .card {
+  transition: opacity 1s ease-out, border-color 3s steps(5),
+    filter 2s ease-in 1s, box-shadow 1.5s linear 2s;
+}
+
+.transitions .card:hover {
+  opacity: 0.75;
+  border-color: orchid;
+  filter: blur(0.15rem);
+  box-shadow: 1rem 1rem 2rem 0.5rem #000;
+}
+
+.transitions .card img {
+  transition: object-position 2s ease-in-out 3s;
+}
+
+.transitions .card img:hover {
+  object-position: 100% 50%;
+}
+
+.transform-2d img {
+  transition: transform 2s ease-in-out;
+}
+
+.transform-2d img:hover {
+  transform: none;
+  transform: translateX(4rem);
+  transform: translateY(4rem);
+  transform: translateY(-4rem);
+  transform: translateZ(4rem);
+  transform: translate(-4rem, 4rem);
+  transform: translate(50%, 50%);
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, 100px);
+  transform: scaleX(2);
+  transform: scaleY(0.5);
+  transform: scaleZ(1.5);
+  transform: scale(1.5, 1.5);
+  transform: scale(-1, -1);
+  transform: scale(-0.5, -0.5);
+  transform: rotateX(60deg);
+  transform: rotateX(90deg);
+  transform: rotateY(60deg);
+  transform: rotateY(90deg);
+  transform: rotateZ(60deg);
+  transform: rotateZ(-60deg);
+  transform: rotateZ(360deg);
+  transform: rotate(360deg);
+  transform: rotate(-360deg);
+  transform: skewX(20deg);
+  transform: skewX(-20deg);
+  transform: skewY(20deg);
+  transform: skewY(-20deg);
+  transform: skew(20deg, 20deg);
+  /* 
+    matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY() )
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix()
+  */
+  transform: matrix(1, 2, 2, 1, 20, 10);
+  transform: translate(25%, -50%);
+  transform: translate(25%, -50%) rotate(240deg) skew(10deg, 20deg)
+    scale(-0.5, -0.5);
+}
+
+.transform-3d {
+  perspective: 10rem;
+}
+
+.transform-3d img {
+  transition: transform 2s ease-in-out;
+}
+
+.transform-3d img:hover {
+  transform: translateZ(4rem);
+  transform: perspective(1000px) translateZ(4rem);
+  transform: perspective(100rem) translateZ(4rem);
+  transform: perspective(10rem) translateZ(4rem);
+  transform: perspective(1rem) translateZ(4rem);
+  transform: perspective(10rem) translateZ(4rem);
+  transform: perspective(10rem) translateZ(-4rem);
+  transform: translateZ(4rem);
+  transform: translateZ(-4rem);
+  transform: translate3d(2rem, 50%, -3rem);
+  transform: scaleZ(1.5);
+  transform: scale3d(2, 0.5, 3);
+  transform: rotateX(60deg);
+  transform: rotateX(90deg);
+  transform: rotateY(60deg);
+  transform: rotateY(-90deg);
+  transform: rotate3d(1, 1, 1, 45deg);
+  transform: rotate3d(1, 0.5, 0, -45deg);
+  transform: rotate3d(-1, 2.5, -2, 60deg);
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d() */
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);
+  transform: rotate3d(-1, 2.5, -2, 60deg);
+  transform: rotate3d(-1, 2.5, -2, 60deg) translate3d(2rem, 50%, -3rem);
+  transform: rotate3d(-1, 2.5, -2, 60deg) translate3d(2rem, 50%, -3rem)
+    scale3d(2, 0.5, 3);
+}
+
+.transform-origin img {
+  transition: transform 2s ease-in-out;
+  /* transform-origin: x y z; */
+  transform-origin: 50% 50% 0;
+  transform-origin: 0 0;
+  transform-origin: 0;
+  transform-origin: top left;
+  transform-origin: top right;
+  transform-origin: top center;
+  transform-origin: bottom center;
+  transform-origin: bottom left;
+  transform-origin: bottom right;
+  transform-origin: center right;
+  transform-origin: center left;
+  transform-origin: center center;
+  transform-origin: -2rem -3rem;
+  transform-origin: 2rem 3rem;
+  transform-origin: 2rem 75%;
+  transform-origin: 25% 75%;
+  transform-origin: -5% -5%;
+  transform-origin: 30% 90%;
+}
+
+.transform-origin img:hover {
+  transform: rotate(360deg);
+}
+
+.flip-card-1,
+.flip-card-2 {
+  border: thick solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 600px;
+  height: 400px;
+
+  position: relative;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+  perspective: 10rem;
+  transform-style: flat;
+  transform-style: preserve-3d;
+}
+
+.flip-card-2 {
+  transform-origin: center right;
+}
+
+.flip-card-1:hover {
+  transform: rotateY(180deg);
+}
+
+.flip-card-2:hover {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-1 img,
+.flip-card-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.flip-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  backface-visibility: hidden;
+}
+
+.flip-front {
+  transform: rotateY(0deg);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+@keyframes myAwesomeAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+.my-animation {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+  animation-name: myAwesomeAnimation;
+  animation-duration: 3s;
+  animation-duration: 2s;
+  /* https://cubic-bezier.com/ */
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(0.33, 0.92, 0.92, 0.36);
+  animation-timing-function: ease-in-out;
+  animation-delay: 1500ms;
+  animation-delay: 0;
+  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-direction: alternate;
+  animation-direction: alternate-reverse;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  /* Al final de la animación se queda con los estilos finales de la animación */
+  animation-fill-mode: forwards;
+  /* Al inicio de la animación se queda con los estilos iniciales de la animación */
+  animation-fill-mode: backwards;
+  /* both aplica al mismo tiempo forwards y backwards */
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  animation-play-state: running;
+  animation: myAwesomeAnimation 1s;
+  animation: myAwesomeAnimation 1.5s ease 250ms 7 alternate both running;
+}
+
+@keyframes myAwesomeAnimation2 {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+.my-animation-2 {
+  animation: myAwesomeAnimation2 2s;
+  animation: myAwesomeAnimation2 5s;
+  animation: myAwesomeAnimation2 1s;
+  animation: myAwesomeAnimation2 6s;
+}
+
+@keyframes multipleAnimation1 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes multipleAnimation2 {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animation-multiple {
+  animation: multipleAnimation1 2s infinite;
+  animation: multipleAnimation2 2s infinite;
+  animation: multipleAnimation1 2s infinite, multipleAnimation2 1s 3 ease-in-out;
+}
+
+.motion-examples {
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  font-size: 5vw;
+  animation: fadeIn 2s linear 2s infinite alternate both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  font-size: 5vw;
+  animation: fadeOut 2s linear 2s infinite alternate both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate(-1px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate(2px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate(-4px, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate(4px, 0);
+  }
+}
+
+.shake {
+  font-size: 5vw;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.shake:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate(0, 0);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  font-size: 5vw;
+  animation: pulse 1s linear infinite;
+}
+
+@keyframes heartColor {
+  10% {
+    background-color: #d00;
+  }
+}
+
+.heart {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+  height: 10vw;
+  animation: pulse 1s infinite;
+}
+
+.heart::after,
+.heart::before {
+  position: absolute;
+  content: "";
+  left: 5vw;
+  top: 0;
+  width: 5vw;
+  height: 8vw;
+  background-color: #a00;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  border-radius: 5vw 5vw 0 0;
+  animation: heartColor 1s infinite;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 5vw;
+  height: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  border-top-color: #09f;
+  animation: spinner 1s ease-out infinite;
+}
+
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+  width: 15rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+.anim-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: #d00;
+  transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after {
+  width: 100%;
+}
+
+.to-left::after {
+  left: 0;
+}
+
+.to-center::after {
+  left: 50%;
+}
+
+.to-center:hover::after {
+  left: 0;
+}
+
+.to-right::after {
+  right: 0;
+}
+
+.anim-bg-gradient {
+  background-image: linear-gradient(to right, pink, violet, orange, orangered);
+  background-size: 300% 100%;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.anim-bg-gradient:hover {
+  background-position: 100% 0;
+}
+
+.tabs-menu {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 70%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+}
+
+.tabs-menu input[type="radio"] {
+  display: none;
+}
+
+.tabs-menu label {
+  position: relative;
+  z-index: 1;
+  width: calc(100% / 4 - 0.5rem);
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabs-menu label:hover {
+  color: #fff;
+}
+
+.tabs-menu input[type="radio"]:checked + label {
+  color: #fff;
+}
+
+.tab-bg-hover {
+  position: absolute;
+  width: calc(100% / 4 - 0.5rem);
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(90deg, #a00, #d00);
+  transition: transform 300ms ease-in-out;
+}
+
+#tab-1:checked ~ .tab-bg-hover {
+  transform: translateX(0);
+}
+
+#tab-2:checked ~ .tab-bg-hover {
+  transform: translateX(100%);
+}
+
+#tab-3:checked ~ .tab-bg-hover {
+  transform: translateX(200%);
+}
+
+#tab-4:checked ~ .tab-bg-hover {
+  transform: translateX(300%);
+}
+
+.off-canvas-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  /* opacity: 0.25; */
+  opacity: 0;
+}
+
+.off-canvas-burger {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 998;
+  width: 3rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  background-color: #d00;
+  transform: rotate(0deg) translate(0, -1.2rem);
+  transform-origin: top left;
+  transition: transform 500ms ease, background-color 500ms ease;
+}
+
+.off-canvas-burger::before,
+.off-canvas-burger::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  background-color: #d00;
+  transition: transform 500ms ease;
+}
+
+.off-canvas-burger::before {
+  transform: rotate(0deg) translate(0, -0.9rem);
+  /* background-color: blue; */
+}
+
+.off-canvas-burger::after {
+  transform: rotate(0deg) translate(0, 0.3rem);
+  /* background-color: green; */
+}
+
+.off-canvas-btn:checked + .off-canvas-burger {
+  background-color: transparent;
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::before {
+  transform: rotate(45deg) translate(0, 0);
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::after {
+  transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+}
+
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  transition: transform 500ms ease-in-out;
+  transform: translate(0, -100%);
+  transform: translate(0, 100%);
+  transform: translate(100%, 0);
+  transform: translate(-100%, 0);
+}
+
+.off-canvas-btn:checked ~ .off-canvas-menu {
+  transform: translate(0, 0);
+}
+
+.off-canvas-menu-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.off-canvas-link {
+  border-bottom: thin solid #d00;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 300ms ease;
+}
+
+.off-canvas-link:first-child {
+  border-top: thin solid #d00;
+}
+
+.off-canvas-link:hover {
+  background-color: #d005;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  position: relative;
+  border: thick double #d00;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  line-height: 3rem;
+  color: #fff;
+  background-color: #d00;
+  transition: background-color 300ms linear, transform 300ms ease-in-out;
+}
+
+.modal-close:hover {
+  background-color: #a00;
+  transform: scale(1.2);
+}
+
+@keyframes introStarWars {
+  0% {
+    transform: perspective(100vh) rotateX(15deg) translateY(100%);
+  }
+
+  100% {
+    transform: perspective(100vh) rotateX(25deg) translateY(-200%);
+  }
+}
+
+.star-wars {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffb13a;
+  background-image: url("../assets/stars.gif");
+}
+
+.star-wars-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  animation: introStarWars 20s linear infinite;
+}
+
+.star-wars h2,
+.star-wars h3 {
+  font-size: 5vw;
+  text-align: center;
+}
+
+.star-wars p {
+  font-size: 3vw;
+  line-height: 4rem;
+}

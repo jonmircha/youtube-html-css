@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2 {
+  margin: 0;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+}
+
+[id] {
+  scroll-margin-top: 7.8ex;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 0.25rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.header a {
+  margin: 0 1rem;
+  color: #00c4d6;
+}
+
+.header a:hover {
+  color: #e94bb4;
+}
+
+.slide {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #d9e8f0;
+  background-color: #1e2345;
+}
+
+.slide:nth-child(even) {
+  background-color: #108eb4;
+}
