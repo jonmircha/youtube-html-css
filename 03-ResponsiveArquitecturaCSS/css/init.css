@@ -1,0 +1,92 @@
+:root {
+  --html-color: #e44d26;
+  --css-color: #1572b6;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  color: var(--css-color);
+  transition: color 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+a:hover {
+  color: var(--html-color);
+  opacity: 0.75;
+}
+
+hr {
+  border: thin solid var(--html-color);
+  margin: 20vh auto;
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: thin solid grey;
+  padding: 0.5rem;
+}
+
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.top-btn svg {
+  width: inherit;
+  height: inherit;
+  font-size: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-screen {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.w-75 {
+  max-width: 75%;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-1-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .grid-1-2 > * {
+    padding: 1rem;
+  }
+}

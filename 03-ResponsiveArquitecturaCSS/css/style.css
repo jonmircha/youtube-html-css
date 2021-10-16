@@ -1,0 +1,278 @@
+[class^="box"] {
+  margin: 3rem auto;
+  background-color: orangered;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+}
+
+.box-flexible {
+  width: 50%;
+  height: 20vh;
+}
+
+.box-flexible-2 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+}
+
+.box-flexible-3 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+  width: 300px;
+  height: 300px;
+}
+
+.box-flexible-4 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+  width: 50%;
+  height: 20vh;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.responsive-media {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  /* 
+    Formato widescreen 16:9
+    16 ---> 100%
+     9 --->  56.25%
+  */
+  padding-bottom: 56.25%;
+}
+
+.responsive-media > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect-ratio-16-9 {
+  background-color: rebeccapurple;
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+@media print {
+  @page {
+    size: A5 landscape;
+  }
+
+  body {
+    font-size: 10pt;
+    font-family: sans-serif;
+    background-color: #000;
+    color: greenyellow;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: black;
+    color: teal;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  html {
+    background-color: white;
+    color: darkblue;
+  }
+}
+
+@media screen and (prefers-color-scheme: no-preference) {
+  html {
+    background-color: white;
+    color: darkred;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* En Mobile First se usa min-width que significa lo mínimo, del valor que des, hacia arriba */
+@media screen and (min-width: 480px) {
+  html {
+    background-color: lightpink;
+  }
+}
+
+/* En Desktop First se usa max-width que significa lo máximo, del valor que des, hacia abajo */
+@media screen and (max-width: 1024px) {
+  html {
+    background-color: lightgreen;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    background-color: white;
+  }
+}
+
+@supports (grid-template-columns: subgrid) {
+  html {
+    background-color: black;
+    color: greenyellow;
+  }
+}
+
+@supports not (grid-template-columns: subgrid) {
+  html {
+    background-color: darkolivegreen;
+    color: white;
+  }
+}
+
+@supports (display: grid) and (grid-template-columns: subgrid) {
+  html {
+    background-color: darkslateblue;
+    color: lightseagreen;
+  }
+}
+
+@supports (display: grid) or (grid-template-columns: subgrid) {
+  html {
+    background-color: white;
+    color: black;
+  }
+}
+
+.card {
+  border: thin solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  contain: layout inline-size style;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* chrome://flags/ */
+@container (min-width: 600px) {
+  .card-container {
+    display: flex;
+  }
+
+  .card-container > * {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+.fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fluid-item {
+  border: thin solid gray;
+  padding: 1rem;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--2: clamp(0.91rem, 0.89rem + 0.1vw, 0.96rem);
+  --step--1: clamp(1.09rem, 1.05rem + 0.21vw, 1.2rem);
+  --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.5rem);
+  --step-1: clamp(1.58rem, 1.46rem + 0.59vw, 1.88rem);
+  --step-2: clamp(1.89rem, 1.71rem + 0.89vw, 2.34rem);
+  --step-3: clamp(2.27rem, 2.01rem + 1.29vw, 2.93rem);
+  --step-4: clamp(2.72rem, 2.36rem + 1.83vw, 3.66rem);
+  --step-5: clamp(3.27rem, 2.75rem + 2.56vw, 4.58rem);
+}
+
+.step--2 {
+  font-size: var(--step--2);
+}
+
+.step--1 {
+  font-size: var(--step--1);
+}
+
+.step-0 {
+  font-size: var(--step-0);
+}
+
+.step-1 {
+  font-size: var(--step-1);
+}
+
+.step-2 {
+  font-size: var(--step-2);
+}
+
+.step-3 {
+  font-size: var(--step-3);
+}
+
+.step-4 {
+  font-size: var(--step-4);
+}
+
+.step-5 {
+  font-size: var(--step-5);
+}
+
+body {
+  /* 
+    14 = tamaño de letra más pequeño
+    18 = tamaño de letra más grande
+    300 = tamaño de viewport más pequeño
+    1400 = tamaño de viewport más grande
+  */
+  /* font-size: calc(14px + (18 -14) * ((100vw - 300px) / (1400 - 300))); */
+  /* font-size: calc(12px + (24 -12) * ((100vw - 200px) / (1600 - 200))); */
+}
+
+.box-fluid {
+  width: clamp(400px, 60vw, 600px);
+  height: clamp(200px, 30vh, 300px);
+}

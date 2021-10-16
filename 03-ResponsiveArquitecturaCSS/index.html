@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Responsive Design y Arquitectura CSS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+  <link rel="stylesheet" href="css/init.css">
+  <link rel="stylesheet" media="print" href="css/print.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="container">
+    <header id="top" class="full-screen">
+      <h1>Curso <i>Responsive Design</i> y Arquitectura <i>CSS</i></h1>
+      <ol>
+        <li>
+          <h2><i>Responsive Design</i></h2>
+          <ul>
+            <li><a href="https://jonmircha.com/responsive" target="_blank"><i>Slides: Responsive Design</i></a></li>
+            <li><a href="#contenedores-flexibles">Contenedores Flexibles</a></li>
+            <li><a href="#multimedia-flexible">Multimedia Flexible</a></li>
+            <li><a href="#media-queries"><i>Media Queries</i></a></li>
+            <li><a href="#breakpoints"><i>Breakpoints</i></a></li>
+            <li><a href="#viewport"><i>Viewport</i></a></li>
+            <li><a href="#responsive-grid"><i>Responsive Grid</i></a></li>
+            <li><a href="#feature-queries"><i>Feature Queries</i></a></li>
+            <li><a href="#container-queries"><i>Container Queries</i></a></li>
+            <li><a href="#seo"><i>SEO</i></a></li>
+            <li>
+              <h3>Estrategias de Diseño Multidispositivos</h3>
+              <ul>
+                <li><a href="#desktop-mobile"><i>Responsive Design: Desktop First VS Mobile First</i></a></li>
+                <li><a href="#adaptive-design"><i>Adaptive Design</i></a></li>
+                <li><a href="#ress"><i>Responsive Design + Server Side Components (RESS)</i></a></li>
+                <li><a href="#responsible-design"><i>Responsible Responsive Design</i></a></li>
+                <li><a href="#fluid-design"><i>Fluid Design</i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2>Arquitectura <i>CSS</i></h2>
+          <ul>
+            <li><a href="https://jonmircha.com/css" target="_blank"><i>Slides: Arquitectura CSS</i></a></li>
+          </ul>
+        </li>
+      </ol>
+      <a class="top-btn" href="#top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+          <path
+            d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+        </svg>
+      </a>
+    </header>
+    <hr>
+    <article id="contenedores-flexibles" class="full-screen">
+      <h2>Contenedores Flexibles</h2>
+      <p>
+        Todos los elementos de nuestra interfaz tienen que ser flexibles y responsivos.
+      </p>
+      <div class="box"></div>
+      <div class="box-flexible"></div>
+      <div class="box-flexible-2"></div>
+      <div class="box-flexible-2">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid obcaecati laboriosam inventore nobis?
+          Maxime, dolor consequatur atque dolorum nulla porro velit ducimus perspiciatis, incidunt quod temporibus
+          molestias, magnam esse?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid obcaecati laboriosam inventore nobis?
+          Maxime, dolor consequatur atque dolorum nulla porro velit ducimus perspiciatis, incidunt quod temporibus
+          molestias, magnam esse?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid obcaecati laboriosam inventore nobis?
+          Maxime, dolor consequatur atque dolorum nulla porro velit ducimus perspiciatis, incidunt quod temporibus
+          molestias, magnam esse?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid obcaecati laboriosam inventore nobis?
+          Maxime, dolor consequatur atque dolorum nulla porro velit ducimus perspiciatis, incidunt quod temporibus
+          molestias, magnam esse?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid obcaecati laboriosam inventore nobis?
+          Maxime, dolor consequatur atque dolorum nulla porro velit ducimus perspiciatis, incidunt quod temporibus
+          molestias, magnam esse?
+        </p>
+      </div>
+      <div class="box-flexible-3"></div>
+      <div class="box-flexible-4"></div>
+    </article>
+    <hr>
+    <article id="multimedia-flexible" class="full-screen">
+      <h2>Multimedia Flexible</h2>
+      <p>
+        Un elemento <b>multimedia</b> es todo aquello que no es texto, las siguientes etiquetas son ejemplos de
+        multimedia:
+      </p>
+      <ul>
+        <li><b><i>img</i></b></li>
+        <li><b><i>audio</i></b></li>
+        <li><b><i>video</i></b></li>
+        <li><b><i>iframe</i></b></li>
+        <li><b><i>canvas</i></b></li>
+        <li><b><i>svg</i></b></li>
+        <li><b><i>picture</i></b></li>
+        <li><b><i>object</i></b></li>
+        <li><b><i>embed</i></b></li>
+        <li><b><i>map</i></b></li>
+        <li><b><i>area</i></b></li>
+      </ul>
+      <p>
+        En el <i>Responsive Design</i> la multimedia debe ser flexible y adaptarse al tamaño de su contenedor, lo
+        podemos
+        lograr con las
+        siguiente regla <i>CSS</i>:
+      </p>
+      <pre><code class="language-css">
+  img, audio, video, iframe, canvas, svg, picture {
+    max-width:100%;
+    height: auto;
+  }
+      </code></pre>
+      <h3>Imágenes Responsivas</h3>
+      <p>Simplemente adaptamos la imagen al tamaño de su contenedor.</p>
+      <img src="img/puesta-sol.jpg" alt="Puesta de Sol">
+      <h4>Atributo <i>srcset</i> y <i>sizes</i></h4>
+      <p>
+        El propósito de estos atributos, es mejorar el rendimiento de carga, al colocar la misma imagen pero en
+        diferentes
+        tamaños y pesos,
+        dependiendo del tamaño o la resolución de la pantalla.
+      </p>
+      <img src="img/html5-3d-600.png"
+        srcset="img/html5-3d-600.png 1x, img/html5-3d-900.png 1.5x, img/html5-3d-1200.png 2x" alt="HTML5">
+      <br>
+      <img src="img/html5-3d-600.png"
+        srcset="img/html5-3d-600.png 600w, img/html5-3d-900.png 900w, img/html5-3d-1200.png 1200w" alt="HTML5">
+      <br>
+      <img src="img/html5-3d-600.png"
+        srcset="img/html5-3d-600.png 600w, img/html5-3d-900.png 900w, img/html5-3d-1200.png 1200w"
+        sizes="(max-width: 480px) 300px, (max-width: 600px) 480px, (max-width: 768px) 600px, (max-width: 1024px) 900px, (min-width: 1200px) 1200px"
+        alt="HTML5">
+      <h4>Etiqueta <i>picture</i></h4>
+      <p>
+        El objetivo de esta etiqueta, no es sólo mostrar diferentes tamaños de la misma imagen,
+        sino también mostrar imágenes diferentes. Por ejemplo, recortar una imagen de forma diferente según el tamaño de
+        la
+        pantalla y las diferencias en el diseño. Esto se conoce como "dirección de arte".
+      </p>
+      <picture>
+        <source srcset="img/kitten-large.png" media="(min-width: 1024px)">
+        <source srcset="img/kitten-medium.png" media="(min-width: 600px)">
+        <img src="img/kitten-small.png" alt="Kitten">
+      </picture>
+      <br>
+      <picture>
+        <source srcset="img/butterfly.webp" type="image/webp" />
+        <img src="img/butterfly.jpg" alt="Mariposa">
+      </picture>
+      <h3>Videos Responsivos</h3>
+      <video src="assets/kenai.mp4" controls></video>
+      <div class="responsive-media">
+        <video src="assets/kenai.mp4" controls></video>
+      </div>
+      <video class="aspect-ratio-16-9" src="assets/kenai.mp4" controls></video>
+      <div class="aspect-ratio-16-9"></div>
+      <h3>Iframes Responsivos </h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/F55LNTW3GE0" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <br>
+      <div class="responsive-media">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F55LNTW3GE0" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <iframe class="aspect-ratio-16-9" width="560" height="315" src="https://www.youtube.com/embed/F55LNTW3GE0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <br>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.7164207508495!2d-99.17589929793417!3d19.353636286065594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe5f68bfc051%3A0xbc7ce0154d2a8642!2sViveros%20de%20Coyoac%C3%A1n%2C%20Del%20Carmen%2C%2004100%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1633227373831!5m2!1ses-419!2smx"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <br>
+      <iframe class="aspect-ratio-1-1"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.7164207508495!2d-99.17589929793417!3d19.353636286065594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe5f68bfc051%3A0xbc7ce0154d2a8642!2sViveros%20de%20Coyoac%C3%A1n%2C%20Del%20Carmen%2C%2004100%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1633227373831!5m2!1ses-419!2smx"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </article>
+    <hr>
+    <article id="media-queries" class="full-screen">
+      <h2><i>Media Queries</i></h2>
+      <p>
+        Desde la especificación de <a href="http://www.w3.org/TR/CSS2/" target="_blank"><i>CSS 2.1</i></a>, las hojas de
+        estilo han
+        tenido cierto grado de capacidad para el reconocimiento de dispositivos mediante el uso de tipos de medios. Por
+        ejemplo:
+      </p>
+      <pre><code class="language-html">&lt;link rel="stylesheet" media="print" href="print.css"&gt;</code></pre>
+      <p>
+        Con <i>CSS3</i>, la <i>W3C</i> perfeccionó y mejoró los tipos de medios con características multimedia y con la
+        capacidad de
+        preguntar dichas características a los medios.
+      </p>
+      <p>
+        Esto no sólo hace posible inspeccionar el contenido que se entrega al dispositivo, sino también las
+        características
+        físicas reales del dispositivo.
+      </p>
+      <p>
+        El uso de <i>media queries</i> permite pedir fácilmente al navegador sus características, tales como anchura,
+        altura,
+        relación de aspecto, orientación, entre otras.
+      </p>
+      <p>
+        La sintaxis es la siguiente:
+      </p>
+      <pre><code class="language-css">
+  @media screen and (max-width:480px) and (orientation:portrait) {
+    /* 
+    Código CSS que se aplicará cuando se cumpla la media queries
+    */
+  }
+      </code></pre>
+      <h3>Propiedades que soportan <i>Media Queries</i></h3>
+      <table>
+        <tr>
+          <th>Propiedad</th>
+          <th>Definición</th>
+          <th>max / min</th>
+        </tr>
+        <tr>
+          <td><b><i>width</i></b></td>
+          <td>
+            <p>El ancho del área de visualización.</p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>height</i></b></td>
+          <td>
+            <p>El alto del área de visualización.</p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>device-width</i></b></td>
+          <td>
+            <p>La anchura de la superficie de representación del dispositivo.</p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>device-height</i></b></td>
+          <td>
+            <p>La altura de la superficie de representación del dispositivo.</p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>orientation</i></b></td>
+          <td>
+            <p>Acepta los valores de <i>portrait</i> (vertical) y <i>landscape</i> (horizontal).</p>
+          </td>
+          <td>❌</td>
+        </tr>
+        <tr>
+          <td><b><i>aspect-ratio</i></b></td>
+          <td>
+            <p>
+              Relación entre la anchura de la zona de visualización de toda su altura.
+            </p>
+            <p>
+              Por ejemplo: en una computadora de escritorio, se podría consultar si la ventana del navegador se
+              encuentra
+              en una
+              relación de 16:9.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>device-aspect-ratio</i></b></td>
+          <td>
+            <p>
+              Proporción de anchura de la superficie de representación del dispositivo a través de su altura.
+            </p>
+            <p>
+              Por ejemplo: en una computadora de escritorio, se podría consultar si la pantalla está en una relación de
+              16:9.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>color</i></b></td>
+          <td>
+            <p>
+              El número de <i>bits</i> por componente de color del dispositivo.
+            </p>
+            <p>
+              Por ejemplo, un dispositivo de color de 8 <i>bits</i> podría pasar con éxito una consulta de (color: 8).
+              Dispositivos de color
+              no deben devolver un valor de 0.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>color-index</i></b></td>
+          <td>
+            <p>
+              El número de entradas en la tabla de búsqueda de color del dispositivo de salida.
+            </p>
+            <p>
+              Por ejemplo, <i>@media screen and (min-color-index:256)</i>.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>monochrome</i></b></td>
+          <td>
+            <p>
+              Al igual que el color, la característica monocromática permite ponernos a prueba el número de <i>bits</i>
+              por pixel
+              en un
+              dispositivo monocromático.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>resolution</i></b></td>
+          <td>
+            <p>
+              Pruebas de la densidad de los píxeles en el dispositivo.
+            </p>
+            <p>
+              Por ejemplo, <i>screen and (resolution:72dpi) or screen and (max-resolution:300dpi)</i>.
+            </p>
+          </td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td><b><i>scan</i></b></td>
+          <td>
+            <p>
+              Para la navegación basada en <i>tv</i>, mide si el proceso de exploración es progresiva o escaneo.
+            </p>
+          </td>
+          <td>❌</td>
+        </tr>
+        <tr>
+          <td><b><i>grid</i></b></td>
+          <td>
+            <p>
+              Comprueba si el dispositivo es una pantalla basada en la red, como los teléfonos con funciones con una
+              fuente de ancho
+              fijo. Se puede expresar simplemente como (<i>grid</i>).
+            </p>
+          </td>
+          <td>❌</td>
+        </tr>
+      </table>
+      <h3>Más información sobre las <i>Media Queries</i></h3>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css3-mediaqueries/" target="_blank"><i>Media Queries</i> en la
+            <i>W3C</i></a>.
+        </li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/Media_Queries/Using_media_queries"
+            target="_blank"><i>Media Queries</i> en <i>MDN</i></a>.</li>
+        <li><a href="https://mediaqueri.es/" target="_blank">Inspiración para sitios responsivos</a>.</li>
+        <li><a href="https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/" target="_blank"><i>CSS</i>
+            para Impresión</a>.</li>
+      </ul>
+    </article>
+    <hr>
+    <article id="breakpoints" class="full-screen">
+      <h2><i>Breakpoints</i></h2>
+      <p>
+        <i>Ethan Marcotte</i> en su libro <i>Responsive Design</i> páginas 113-114 nos propone la siguiente lista de
+        puntos de
+        interrupción según la resolución del dispositivo:
+      </p>
+      <img src="https://jonmircha.com/img/blog/breakpoints.jpg" alt="Breakpoints">
+      <table>
+        <tr>
+          <td><b><i>320px</i></b></td>
+          <td>
+            <p>Para dispositivos con pantallas pequeñas, como los teléfonos en modo vertical.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b><i>480px</i></b></td>
+          <td>
+            <p>Para dispositivos con pantallas pequeñas, como los teléfonos, en modo horizontal.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b><i>600px</i></b></td>
+          <td>
+            <p>Tabletas pequeñas, como el <i>Amazon Kindle</i> (600×800) y <i>Barnes & Noble Nook</i> (600×1024), en
+              modo
+              vertical.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b><i>768px</i></b></td>
+          <td>
+            <p>Tabletas de diez pulgadas como el <i>iPad</i> (768×1024), en modo vertical.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b><i>1024px</i></b></td>
+          <td>
+            <p>Tabletas como el <i>iPad</i> (1024×768), en modo horizontal, así como algunas pantallas de ordenador
+              portátil, <i>netbook</i>, y de
+              escritorio.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b><i>1200px</i></b></td>
+          <td>
+            <p>Para pantallas panorámicas, principalmente portátiles y de escritorio.</p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        Con la tabla que <i>Ethan Marcotte</i> nos propone prácticamente están cubiertos teléfonos inteligentes,
+        tabletas,
+        phablets,
+        laptops,
+        netbooks, computadoras de escritorio y pantallas, tanto en modo vertical como horizontal, por lo que con estos 6
+        puntos
+        de interrupción sólo tendríamos que validar un solo atributo en las <i>media queries</i>: el <b>ancho</b>.
+      </p>
+      <p>
+        De cualquier forma en el sitio <a href="http://screensiz.es" target="_blank"><i>screensiz.es</i></a>, se puede
+        estar revisando
+        constantemente las características físicas con las que se fabrican los dispositivos.
+      </p>
+      <h3>¡Importante! Convierte tus <i>Breakpoints</i> a <i>EMs</i></h3>
+      <h4>¿Por qué?</h4>
+      <p>
+        Aunque los pixeles se consideran una unidad de medida absoluta, en realidad son unidades relativas a la
+        resolución
+        de
+        pantalla del dispositivo que lo visualiza, si dicho dispositivo tiene una densidad mayor a la normal, entonces
+        la
+        proporción de los pixeles cambiará, por ello es importante que los <i>breakpoints</i> de las <i>media
+          queries</i>
+        se conviertan a <i>ems</i>
+        que si son unidades relativas y proporcionales.
+      </p>
+      <h4>Más información</h4>
+      <ul>
+        <li><a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/" target="_blank"><i>The
+              EMs
+              have it: Proportional Media Queries</i></a>.</li>
+        <li><a href="https://css-tricks.com/why-ems/" target="_blank"><i>Why Ems?</i></a>.</li>
+        <li><a href="http://inamidst.com/stuff/notes/csspx" target="_blank"><i>CSS px is an Angular Measurement</i>.</a>
+        </li>
+      </ul>
+      <h4>Entonces</h4>
+      <p>Objetivo en pixeles / Contexto en pixeles = Resultado en <i>Ems</i></p>
+      <p>320px / 16px = 20em</p>
+      <p>480px / 16px = 30em</p>
+      <p>600px / 16px = 37.5em</p>
+      <p>768px / 16px = 48em</p>
+      <p>1024px / 16px = 64em</p>
+      <p>1200px / 16px = 75em</p>
+    </article>
+    <hr>
+    <article id="viewport" class="full-screen">
+      <h2><i>Viewport</i></h2>
+      <p>
+        El <i>viewport</i> fue introducido por <i>Apple</i> en <i>Safari</i> móvil, para ayudar a mejorar la
+        presentación de los sitios en
+        dispositivos como el <i>iPhone</i>, <i>iPod Touch</i> o <i>iPad</i>; posteriormente se volvió un estándar en
+        todos los navegadores.
+      </p>
+      <p>
+        La etiqueta <i>viewport</i> es el área visible de nuestro navegador y nos permite definir el ancho, alto y
+        escala del
+        área
+        usada por el navegador para mostrar el contenido.
+      </p>
+      <p>
+        Si no agregamos esta meta etiqueta a nuestros documentos <i>HTML</i> tendremos problemas de visualización.
+      </p>
+      <p>
+        El <i>viewport</i> tiene 6 atributos importantes:
+      </p>
+      <ol>
+        <li><b><i>width</i></b>: define el ancho visible, suele usarse la constante <i>device-width</i> para que se
+          adapte al ancho
+          del
+          dispositivo.</li>
+        <li><b><i>height</i></b>: define el alto visible, suele usarse la constante <i>device-height</i> para que se
+          adapte al alto
+          del
+          dispositivo.</li>
+        <li><b><i>initial-scale</i></b>: define la escala inicial a la que deberá visualizarse el contenido, siendo 1 el
+          100%.
+        </li>
+        <li><b><i>minimum-scale</i></b>: define la escala mínima a la que se podrá hacer <i>zoom</i> al contenido, por
+          ejemplo si se
+          configura .5 significa que se podrá hacer un <i>zoom</i> de hasta el 50%.</li>
+        <li><b><i>maximum-scale</i></b>: define la escala máxima a la que se podrá hacer <i>zoom</i> al contenido, por
+          ejemplo si se
+          configura 3 significa que se podrá hacer un <i>zoom</i> de hasta el 300%.</li>
+        <li><b><i>user-scalable</i></b>: define si el usuario puede escalar o no el contenido, sus valores son
+          <i>yes</i> por defecto
+          y no
+          para bloquear esta propiedad.
+        </li>
+      </ol>
+      <p>
+        De los 6 atributos mencionados, hay 2 que son muy importantes definir el <b>ancho</b> y la <b>escala
+          inicial</b>, para que el
+        contenido se adapte al tamaño del dispositivo.
+      </p>
+      <p>
+        Adicionalmente se recomienda que no se especifique la máxima escala, ni bloquear la capacidad de escalar el
+        contenido,
+        ya que independientemente de que el documento se diseñe con <i>responsive</i>, algunos usuarios con capacidades
+        visuales
+        diferentes, podrían tener problemas al ver el contenido y desearían aumentar el tamaño del contenido, si
+        definimos una
+        escala máxima o bloqueamos la capacidad de escalar el contenido produciremos en estos usuarios una mala y
+        frustrante
+        experiencia de usuario.
+      </p>
+      <p>
+        La propiedad del alto es opcional definirla, se utilizara cuando necesitemos condicionar el alto del contenido.
+      </p>
+      <p>
+        Por lo anterior la etiqueta meta <i>viewport</i> tendría que definirse de la siguiente manera:
+      </p>
+      <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;</code></pre>
+    </article>
+    <hr>
+    <article id="responsive-grid" class="full-screen">
+      <h2><i>Responsive Grid</i></h2>
+      <section class="row">
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 1</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 2</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 3</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 4</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 5</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 6</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 7</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 8</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 9</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 10</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 11</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 12</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 13</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 14</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 15</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 16</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 17</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 18</article>
+        <article class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">Elemento 19</article>
+      </section>
+    </article>
+    <hr>
+    <article id="feature-queries" class="full-screen">
+      <h2><i>Feature Queries</i></h2>
+      <p>
+        Las <b><i>Feature Queries</i></b> son reglas <i>CSS</i> que le preguntan al navegador si soportan o no, una
+        determinada propiedad o valor.
+      </p>
+      <pre><code class="language-css">
+@supports (display: grid) {
+  /* 
+      Código CSS que se aplicará cuando se cumpla la feature queries
+  */
+}
+      </code></pre>
+    </article>
+    <hr>
+    <article id="container-queries" class="full-screen">
+      <h2><i>Container Queries</i></h2>
+      <p>
+        Los <i>Container Queries</i> nos permiten hacer componentes responsivos de interfaz de usuario, que no dependan
+        del tamaño de la pantalla y las <i>media queries</i> para cambiar o adaptar el diseño de su contenido. Sino que
+        dependan de sus propias necesidades de visualización.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries" target="_blank"><i>CSS
+              Container Queries MDN</i></a></li>
+        <li><a href="https://web.dev/new-responsive/" target="_blank"><i>The new responsive</i></a></li>
+        <li><a href="https://ishadeed.com/article/say-hello-to-css-container-queries/" target="_blank"><i>Say Hello To
+              CSS Container Queries</i></a></li>
+      </ul>
+      <h3>Sintaxis</h3>
+      <pre><code class="language-css">
+.card {
+  contain: layout inline-size style;
+}
+
+@container (min-width: 600px) {
+  .card-container {
+    display: flex;
+  }
+}
+      </code></pre>
+      <h3>Ejemplo</h3>
+      <aside>
+        <article class="card">
+          <div class="card-container">
+            <img class="card-image" src="img/puesta-sol.jpg" alt="Puesta de Sol">
+            <aside class="card-content">
+              <h4 class="card-title">Card Title</h4>
+              <p class="card-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ratione rerum in, iusto fuga sint
+                sunt accusamus quam quae obcaecati eum, sed quia saepe? Inventore, aspernatur et. Qui, amet illo!
+              </p>
+            </aside>
+          </div>
+        </article>
+      </aside>
+    </article>
+    <hr>
+    <article id="seo" class="full-screen">
+      <h2><i>SEO</i></h2>
+      <h3><i>Search Engine Optimization</i></h3>
+      <h4><i>Mobilegeddon</i></h4>
+      <p>
+        Es la actualización al algoritmo de <i>Google</i>, que está activo desde el <b>21 de abril de 2015</b>.
+      </p>
+      <p>
+        Teniendo en cuenta el auge imparable de los dispositivos móviles y el impacto que éstos están teniendo en las
+        costumbres
+        de uso de la <i>web</i>, <i>Google</i> hizo un comunicado a través de su <a
+          href="http://googlewebmastercentral.blogspot.com.es/2015/02/finding-more-mobile-friendly-search.html"
+          target="_blank">blog oficial</a> comentando algunas de las novedades que trae la actualización de su
+        algoritmo.
+      </p>
+      <p>
+        <i>Mobilegeddon</i> pretende actuar sobre todas aquellas webs que no sean amigables con los dispositivos
+        móviles, es
+        decir
+        que no se adapten de forma óptima a dichos dispositivos.
+      </p>
+      <p>
+        Dado que las estrategias de <i>Google</i> se enfocan cada vez más hacia estos dispositivos, es normal que el
+        buscador
+        quiera
+        asegurarse que las <i>webs</i> que indexa cumplen los mínimos de calidad para móviles.
+      </p>
+      <p>
+        <i>Mobilegeddon</i>, afecta:
+      </p>
+      <ul>
+        <li>Exclusivamente a las búsquedas realizadas desde dispositivos móviles.</li>
+        <li>La aplicación del algoritmo será en todos los idiomas y de forma global.</li>
+        <li>No se aplicará a sitios webs completos , sólo a las páginas que no cumplan los criterios.</li>
+      </ul>
+      <h4>Buenas prácticas de <i>SEO</i> y <i>Responsive, según <i>Google</i></i></h4>
+      <ul>
+        <li><a href="https://developers.google.com/webmasters/mobile-sites/?hl=es" target="_blank">Guía de <i>Google</i>
+            para
+            sitios
+            móviles</a></li>
+        <li><a href="https://developers.google.com/webmasters/mobile-sites/mobile-seo/?hl=es" target="_blank"><i>SEO</i>
+            para
+            móviles</a></li>
+        <li><a href="https://www.google.com/webmasters/tools/mobile-friendly/" target="_blank"><i>Mobile Friendly
+              Test</i></a>
+        </li>
+        <li><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank"><i>PageSpeed
+              Insights</i></a>
+        </li>
+      </ul>
+    </article>
+    <hr>
+    <article id="desktop-mobile" class="full-screen">
+      <h2><i>Responsive Design</i></h2>
+      <p>
+        Es el paradigma actual del diseño <i>web</i>. Son un conjunto de buenas prácticas a nivel de código <i>CSS</i>
+        para adaptar el contenido del documento <i>HTML</i> al tamaño de pantalla del dispositivo que lo visualice.
+      </p>
+      <p>
+        Tiene 3 principios:
+      </p>
+      <ol>
+        <li>Grids Flexibles</li>
+        <li>Imágenes Flexibles</li>
+        <li>Media Queries</li>
+      </ol>
+      <p>
+        Fue propuesto por <a href="https://ethanmarcotte.com/" target="_blank"><i>Ethan Marcotte</i></a> en 2010.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://alistapart.com/article/responsive-web-design/" target="_blank">Artículo <i>Responsive
+              Design</i></a></li>
+        <li><a href="https://abookapart.com/products/responsive-web-design" target="_blank">Libro <i>Responsive
+              Design</i></a></li>
+      </ul>
+      <h3><i>Desktop First VS Mobile First</i></h3>
+      <p>
+        Son las 2 estrategias que tiene el <i>Responsive Design</i> para adaptar el contenido al tamaño de la pantalla,
+        centrándose en los dispositivos con pantalla más pequeña (<i>Mobile First</i>) o a la inversa, centrándose en
+        los dispositivos con pantalla más grande (<i>Desktop First</i>).
+      </p>
+      <section class="grid-1-2">
+        <article>
+          <h3><i>Desktop First</i></h3>
+          <h4>(<i>Graceful Degradation</i>)</h4>
+          <p>Las <i>media queries</i> se deben definir de la <b>mayor a la menor</b>.</p>
+          <p>Se utiliza la propiedad <b><i>max-width</i></b> para definir las <i>mediaqueries</i>.</p>
+          <img class="w-75" src="https://jonmircha.com/img/blog/desktop-first.jpg" alt="Desktop First">
+        </article>
+        <article>
+          <h3><i>Mobile First</i></h3>
+          <h4>(<i>Progressive Enhancement</i>)</h4>
+          <p>Las <i>media queries</i> se deben definir de la <b>menor a la mayor</b>.</p>
+          <p>Se utiliza la propiedad <b><i>min-width</i></b> para definir las <i>mediaqueries</i>.</p>
+          <img class="w-75" src="https://jonmircha.com/img/blog/mobile-first.jpg" alt="Mobile First">
+        </article>
+      </section>
+    </article>
+    <hr>
+    <article id="adaptive-design" class="full-screen">
+      <h2><i>Adaptive Design</i></h2>
+      <p>
+        El <i>Adaptive Design</i>, trata de crear interfaces que se adapten a las capacidades y características de cada
+        dispositivo (<i>Hardware</i> y <i>Software</i>).
+      </p>
+      <p>
+        Utiliza programación <i>JavaScript</i> para los
+        cambios en la interfaz.
+      </p>
+      <p>
+        Además podría tener diferentes <i>fronts</i> dependiendo de los dispositivos que soliciten el recurso, por
+        ejemplo:
+      </p>
+      <ul>
+        <li><a href="https://facebook.com/" target="_blank"><i>Facebook Desktop</i></a></li>
+        <li><a href="https://m.facebook.com/" target="_blank"><i>Facebook Mobile</i></a></li>
+      </ul>
+      <p>
+        Fue propuesto por <a href="https://www.aaron-gustafson.com/" target="_blank"><i>Aaron Gustafson</i></a> en 2011.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://blog.easy-designs.net/archives/on-adaptive-vs-responsive-web-design/"
+            target="_blank">Artículo <i>Adaptive
+              Design</i></a></li>
+        <li><a href="https://adaptivewebdesign.info/" target="_blank">Libro <i>Adaptive
+              Design</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=WHfyN411fd4&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA"
+            target="_blank">Detección de Dispositivos con <i>JS</i></a></li>
+      </ul>
+    </article>
+    <hr>
+    <article id="ress" class="full-screen">
+      <h2><i>Responsive Design + Server Side Components (RESS)</i></h2>
+      <p>
+        El <i>Responsive Design + Server Side Components (RESS)</i>, trata de crear interfaces que se adapten a las
+        capacidades y características de cada
+        dispositivo (<i>Hardware</i> y <i>Software</i>).
+      </p>
+      <p>
+        Pero a diferencia del <i>Adaptive Design</i>, la programación que usa esta del lado del servidor. Las interfaces
+        se crean desde el <i>backend</i>, lo que permite usar la misma vista (ruta) para todos los dispositivos.
+      </p>
+      <ul>
+        <li><a href="https://twitter.com/" target="_blank"><i>Twitter</i></a></li>
+        <li><a href="https://youtube.com/" target="_blank"><i>YouTube</i></a></li>
+      </ul>
+      <p>
+        Fue propuesto por <a href="https://www.lukew.com/" target="_blank"><i>Luke Wroblewski</i></a> en 2011.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://www.lukew.com/ff/entry.asp?1392" target="_blank">Artículo original de <i>Luke
+              Wroblewski</i></a></li>
+        <li><a href="https://www.creativebloq.com/responsive-web-design/getting-started-ress-5122956"
+            target="_blank"><i>Getting started with RESS</i></a></li>
+      </ul>
+    </article>
+    <hr>
+    <article id="responsible-design" class="full-screen">
+      <h2><i>Responsible Responsive Design</i></h2>
+      <p>
+        Mientras que el <i>Responsive Design</i> se basa en buenas prácticas
+        de <i>CSS</i> para adaptar el contenido del documento <i>HTML</i> al tamaño de pantalla del dispositivo que lo
+        visualice, el <i>Responsible Responsive Design</i> agrega buenas prácticas de programación <i>JS</i> no sólo
+        para adaptar el contenido a la pantalla, sino también para mejorar el rendimiento y la carga de la interfaz en
+        el navegador <i>web</i>.
+      </p>
+      <p>
+        Fue propuesto por <a href="https://scottjehl.com/" target="_blank"><i>Scott Jehl</i></a> en 2014.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://abookapart.com/products/responsible-responsive-design" target="_blank">Libro <i>Responsible
+              Responsive Design</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=6IwUl-4pAzc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA"
+            target="_blank"><i>Responsive con JS</i></a></li>
+      </ul>
+    </article>
+    <hr>
+    <article id="fluid-design" class="full-screen">
+      <h2><i>Fluid Design</i></h2>
+      <p>
+        El <i>Fluid Design</i> es una técnica de <i>Responsive Design</i> que trata de escalar y adaptar el contenido al
+        tamaño de la pantalla, sin la necesidad de ocupar <i>media queries</i>.
+      </p>
+      <p>
+        En lugar de diseñar para un determinado número de <i>breakpoints</i>, el <i>Fluid Design</i> crea un sistema
+        dentro del cual los elementos escalan de manera proporcional y fluida.
+      </p>
+      <p>
+        Utiliza características y funciones modernas de <i>CSS</i> para hacer fluir las interfaces, por ejemplo:
+      </p>
+      <ul>
+        <li>Contenedores fluidos</li>
+        <li>Textos fluidos</li>
+        <li><a href="https://youtu.be/inVlqjPNmD8?list=PLvq-jIkSeTUY628cyd9LVbXSXi2xG9mUl&t=858"
+            target="_blank"><i>Grids</i> responsivas sin <i>media queries</i></a></li>
+        <li>
+          Uso de funciones como:
+          <ul>
+            <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=13261s" target="_blank"><i>calc</i></a></li>
+            <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=13796s" target="_blank"><i>min, max</i></a></li>
+            <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=14123s" target="_blank"><i>clamp</i></a></li>
+          </ul>
+        </li>
+        <li>
+          Uso de unidades relativas como:
+        </li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=6194s" target="_blank"><i>EMS</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=7070s" target="_blank"><i>REMs</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=7793s" target="_blank"><i>EXs</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=8158s" target="_blank"><i>CHs</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=8751s" target="_blank">Porcentajes</a></li>
+        <li><a href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=9764s" target="_blank">Unidades del
+            <i>Viewport</i></a></li>
+      </ul>
+      <p>
+        Fue propuesto por <a href="https://www.trysmudford.com/" target="_blank"><i>Trys Mudford</i></a> en 2020.
+      </p>
+      <h3>Más información</h3>
+      <ul>
+        <li><a href="https://utopia.fyi/" target="_blank"><i>Utopia. Fluid Responsive Design</i></a></li>
+        <li><a href="https://utopia.fyi/blog" target="_blank"><i>Utopia Blog</i></a></li>
+        <li><a href="https://utopia.fyi/blog/designing-with-fluid-type-scales/" target="_blank"><i>Designing with fluid
+              type scales</i></a></li>
+        <li><a href="https://utopia.fyi/blog/css-modular-scales/" target="_blank"><i>CSS-only fluid modular type
+              scales</i></a></li>
+        <li><a href="https://utopia.fyi/type/calculator/" target="_blank"><i>Fluid type calculator</i></a></li>
+      </ul>
+      <aside>
+        <h3>Ejemplos <i>Fluid Design</i></h3>
+        <h4><i>Grid</i> Fluida</h4>
+        <section class="fluid-grid">
+          <article class="fluid-item">Elemento 1</article>
+          <article class="fluid-item">Elemento 2</article>
+          <article class="fluid-item">Elemento 3</article>
+          <article class="fluid-item">Elemento 4</article>
+          <article class="fluid-item">Elemento 5</article>
+          <article class="fluid-item">Elemento 6</article>
+          <article class="fluid-item">Elemento 7</article>
+          <article class="fluid-item">Elemento 8</article>
+          <article class="fluid-item">Elemento 9</article>
+          <article class="fluid-item">Elemento 10</article>
+          <article class="fluid-item">Elemento 11</article>
+          <article class="fluid-item">Elemento 12</article>
+          <article class="fluid-item">Elemento 13</article>
+          <article class="fluid-item">Elemento 14</article>
+          <article class="fluid-item">Elemento 15</article>
+          <article class="fluid-item">Elemento 16</article>
+          <article class="fluid-item">Elemento 17</article>
+          <article class="fluid-item">Elemento 18</article>
+          <article class="fluid-item">Elemento 19</article>
+        </section>
+        <h4>Textos Fluidos</h4>
+        <p class="step--2">Step -2</p>
+        <p class="step--1">Step -1</p>
+        <p class="step-0">Step 0</p>
+        <p class="step-1">Step 1</p>
+        <p class="step-2">Step 2</p>
+        <p class="step-3">Step 3</p>
+        <p class="step-4">Step 4</p>
+        <p class="step-5">Step 5</p>
+        <h4>Contenedores Fluidos</h4>
+        <div class="box-fluid"></div>
+      </aside>
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+
+</html>

@@ -8,7 +8,7 @@ En este repositorio encontrarás los recursos para seguir los [Curso de _HTML_ &
 1. [🔵 Fundamentos de _CSS_](https://www.youtube.com/watch?v=K3xmRF8ab1o)
 1. [🔵 Unidades y Estilos _CSS_](https://www.youtube.com/watch?v=p_lT7AgpEMU)
 1. [🔵 Efectos Visuales y Movimiento en _CSS_](https://www.youtube.com/watch?v=mVhoGXkDbMw)
-1. 🔴 Responsive y Arquitectura _CSS_ - Se estrena el 14 de Octubre de 2021
+1. [🔴 Responsive y Arquitectura _CSS_](https://www.youtube.com/watch?v=udGrXWeJp1Y)
 
 ## Mis Redes Sociales
 
