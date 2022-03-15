@@ -479,7 +479,7 @@
   <h2 id="elementos-interactivos">Elementos Interactivos</h2>
   <button onclick="alert('Hola haz clickeado el botón')">Este es un botón</button>
   <br><br>
-  <details>
+  <details><!-- Acordeon -->
     <summary>Título del Acordeón</summary>
     <article>
       <h3>Contenido del Acordeón</h3>
@@ -493,7 +493,7 @@
     </article>
   </details>
   <br>
-  <details open>
+  <details open><!-- con open comienza abierto por defecto -->
     <summary>Título del Acordeón</summary>
     <article>
       <h3>Contenido del Acordeón</h3>
@@ -515,15 +515,15 @@
   <h2 id="audio-video">Audio y Video</h2>
   <audio src="media/Feels-PatrickPatrikios.mp3" controls preload></audio>
   <br>
-  <video src="media/kenai.mp4" controls preload poster="img/puesta-sol.jpg"></video>
+  <video src="media/kenai.mp4" controls preload poster="img/puesta-sol.jpg"></video><!-- con control para que se muestre el reproductor, preload carga el audio al cargar la página, poster es la imagen de fondo -->
   <br>
   <a href="index.html#inicio">☝️</a>
-  <h2 id="iframes">Iframes</h2>
+  <h2 id="iframes">Iframes</h2><!-- con los iframes podemos mostrar contenido externo -->
   <iframe src="hola.html" frameborder="1"></iframe>
   <br>
   <iframe src="https://jonmircha.com" frameborder="1"></iframe>
   <br>
-  <iframe src="https://facebook.com" frameborder="1"></iframe>
+  <iframe src="https://facebook.com" frameborder="1"></iframe><!-- páginas que bloquean los iframe -->
   <br>
   <iframe src="media/emmet-cheat-sheet.pdf" frameborder="1"></iframe>
   <br>
@@ -589,13 +589,13 @@
     <option value="">Python</option>
   </select>
   <br>
-  <input type="text" value="jonmircha" readonly disabled>
+  <input type="text" value="jonmircha" readonly disabled><!-- readonly=>solo lectura; disabled=>desabilitado -->
   <br>
   <input type="text" placeholder="Escribe tu nombre">
   <br>
   <h3>Ejemplo de Formularios</h3>
   <h4>Formulario de Login</h4>
-  <form action="https://jonmircha.com/" method="POST" autocomplete="off">
+  <form action="https://jonmircha.com/" method="POST" autocomplete="off"><!-- autocomplete se puede utilizar en todo los campos del formulario o solo en un campo en específico -->
     <label for="usuario">Usuario: </label>
     <input type="text" name="usuario" id="usuario" placeholder="Escribe tu usuario" pattern="^[A-Za-z]+$"
       title="El campo sólo acepta letras" required>
