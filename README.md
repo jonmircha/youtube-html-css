@@ -1,6 +1,6 @@
 # Cursos _HTML_ & _CSS_
 
-En este repositorio encontrarás los recursos para seguir los [Curso de _HTML_ & _CSS_](https://www.youtube.com/playlist?list=PLvq-jIkSeTUZYcX9SYwVe7f66afwd9qk_) de [Jonathan MirCha](https://jonmircha.com/).
+En este repositorio encontrarás los recursos para seguir los Curso de _HTML_ & _CSS_ de [Jonathan MirCha](https://jonmircha.com/cursos).
 
 ## Cursos de la serie
 
@@ -15,4 +15,3 @@ En este repositorio encontrarás los recursos para seguir los [Curso de _HTML_ &
 - 🔔 Suscríbete al canal https://youtube.com/jonmircha?sub_confirmation=1 🤓
 - 👉 Visita mi sitio web https://jonmircha.com/ 💻
 - 🌮 ¿Me invítas un taco? https://www.paypal.me/jonmircha
-- 📫 Suscríbete a mi lista de correo https://tinyletter.com/jonmircha/
